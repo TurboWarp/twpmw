@@ -1,0 +1,21 @@
+<iframe id="turbowarp" src="https://experiments.turbowarp.org/postmessage-api/454548276/embed?api" width="499" height="416" allowtransparency="true" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
+<div>
+  <button id="get">Get Value</button>
+  <button id="set">Set Value</button>
+</div>
+
+<script src="twpmw.js"></script>
+<script>
+  const tw = new TWPMW(document.getElementById("turbowarp"));
+
+  document.getElementById("get").onclick = async () => {
+    const value = await tw.get("my variable");
+    alert(value);
+  };
+
+  document.getElementById("set").onclick = async () => {
+    const newValue = prompt("New value:");
+    await tw.set("my variable", newValue);
+  };
+</script>
