@@ -12,7 +12,7 @@ class TWPMW {
     const data = e.data;
 
     const type = data.type;
-    if (type === "setup") {
+    if (type === "start") {
       this.ready = true;
       for (const queuedMessage of this.queue) {
         this.postMessage(queuedMessage);
